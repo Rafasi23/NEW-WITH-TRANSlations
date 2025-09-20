@@ -1,0 +1,19 @@
+{
+  "name": "queenacademy-i18n",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "i18n": "node ./scripts/i18n-build.mjs",
+    "i18n:clean": "rimraf dist .i18n-cache",
+    "i18n:preview": "npx http-server dist -p 8080"
+  },
+  "dependencies": {
+    "fast-glob": "^3.3.2",
+    "html-minifier-terser": "^7.2.0",
+    "jsdom": "^24.0.0",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "rimraf": "^6.0.1"
+  }
+}
