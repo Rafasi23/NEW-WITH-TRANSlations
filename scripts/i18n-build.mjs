@@ -1,4 +1,4 @@
-import fs from "fs";
+﻿import fs from "fs";
 import path from "path";
 import fg from "fast-glob";
 import { JSDOM } from "jsdom";
@@ -174,6 +174,21 @@ function postFix(lang, text) {
 function postProcessHTML(locale, html) {
   if (locale === "en") {
     html = html.replace(/Sobre\s+Mim/gi, "About Me");
+    html = html.replace(/About\s+Mim/gi, "About Me");
+    html = html.replace(/Check[-\s]?up\s+de\s+Marketing/gi, "Marketing check-up");
+  }
+  if (locale === "es") {
+    html = html.replace(/Sobre\s+Mim/gi, "Sobre mí");
+  }
+  return html;
+}
+  if (locale === "es") {
+    html = html.replace(/Sobre\s+Mim/gi, "Sobre mí");
+  }
+  return html;
+}
+{
+    html = html.replace(/Sobre\s+Mim/gi, "About Me");
     html = html.replace(/Check[-\s]?up\s+de\s+Marketing/gi, "Marketing check-up");
   }
   if (locale === "es") {
@@ -319,3 +334,4 @@ function postProcessHTML(locale, html) {
 
   console.log("✅ Build complete. Output in /dist (root=PT, plus /pt, /en, /es)");
 })();
+
