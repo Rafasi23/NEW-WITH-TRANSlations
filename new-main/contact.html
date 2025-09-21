@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>👑Queen Academy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="" />
+  <meta name="author" content="http://webthemez.com" />
+
+  <!-- css -->
+  <link href="css/bootstrap.min.css" rel="stylesheet" />
+  <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
+ 
+  <link href="css/flexslider.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+</head>
+<body>
+<div id="wrapper">
+
+  <!-- start header -->
+  <header>
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a>
+        </div>
+        <div class="navbar-collapse collapse ">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="about.html">Sobre nós</a></li>
+            <li><a href="courses.html">Serviços Extra</a></li>
+            <li><a href="pricing.html">Preços</a></li>
+            <li class="active"><a href="contact.html">Contactos</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- end header -->
+
+<!-- headline -->
+<section id="inner-headline">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <h2 class="pageTitle">Contactos</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- content -->
+<section id="content">
+  <div class="container">
+
+    <!-- Mapa -->
+    <div class="row">
+      <div class="col-md-12">
+        <div style="overflow:hidden;border-radius:6px;">
+          <iframe
+            title="Mapa - Queen Academy"
+            width="100%"
+            height="300"
+            style="border:0;"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Avenida%20da%20Liberdade%2C%20Pa%C3%A7o%20de%20Sousa%2C%204560-380%20Penafiel&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form + Info -->
+    <div class="row" style="margin-top:25px;">
+      <!-- Formulário -->
+      <div class="col-md-6">
+        <br>
+        <div class="alert alert-success hidden" id="contactSuccess">
+          <strong>Enviado!</strong> A tua mensagem foi enviada com sucesso.
+        </div>
+        <div class="alert alert-error hidden" id="contactError">
+          <strong>Erro!</strong> Ocorreu um problema ao enviar a mensagem.
+        </div>
+
+        <div class="contact-form">
+          <!-- Netlify Forms + redirect p/ thanks.html -->
+          <form
+            id="contact-form"
+            name="contact"
+            method="POST"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            action="/thanks.html">
+
+            <!-- obrigatório para Netlify -->
+            <input type="hidden" name="form-name" value="contact" />
+
+            <!-- honeypot (anti-bot) -->
+            <p style="display:none;">
+              <label>Não preencher se for humano:
+                <input name="bot-field" />
+              </label>
+            </p>
+
+            <div class="form-group has-feedback">
+              <label for="name">Nome *</label>
+              <input type="text" class="form-control" id="name" name="name" placeholder="O teu nome" required>
+              <i class="fa fa-user form-control-feedback"></i>
+            </div>
+
+            <div class="form-group has-feedback">
+              <label for="email">Email *</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="nome@exemplo.com" required>
+              <i class="fa fa-envelope form-control-feedback"></i>
+            </div>
+
+            <div class="form-group has-feedback">
+              <label for="subject">Assunto *</label>
+              <input type="text" class="form-control" id="subject" name="subject" placeholder="Ex.: Marcação de aula">
+              <i class="fa fa-navicon form-control-feedback"></i>
+            </div>
+
+            <div class="form-group has-feedback">
+              <label for="message">Mensagem *</label>
+              <textarea class="form-control" rows="6" id="message" name="message" placeholder="Escreve aqui a tua mensagem" required></textarea>
+              <i class="fa fa-pencil form-control-feedback"></i>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contacto direto -->
+      <div class="col-md-6">
+        <div class="title-box clearfix">
+          <h3 class="title-box_primary">Informações de contacto</h3>
+        </div>
+        <h5>Fala connosco para marcações, dúvidas ou orçamentos.</h5>
+        <address style="margin-top:10px;">
+          <strong>Queen Academy</strong><br>
+          Avenida da Liberdade, Paço de Sousa<br>
+          4560-380 Penafiel, Porto
+        </address>
+        <p style="margin:8px 0;">
+          <i class="fa fa-phone"></i> +351 969 222 167<br>
+          <i class="fa fa-envelope"></i> <a href="mailto:rafaelsilva1823@gmail.com">rafaelsilva1823@gmail.com</a><br>
+        </p>
+        <p style="margin-top:12px;">
+          <i class="fa fa-clock-o"></i> Seg–Sex: 9h–20h &nbsp;|&nbsp; Sáb: 9h–13h<br>
+          <i class="fa fa-globe"></i> Aulas online e presenciais
+        </p>
+      </div>
+    </div>
+
+  </div><!-- /.container -->
+</section><!-- /#content -->
+
+  <!-- footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+
+        <!-- Contacto -->
+        <div class="col-lg-3">
+          <div class="widget">
+            <h5 class="widgetheading">O Nosso Contacto</h5>
+            <address>
+              <strong>Queen Academy</strong><br>
+              Avenida da Liberdade, Paço de Sousa<br>
+              4560-380 Penafiel Porto
+            </address>
+            <p>
+              <i class="fa fa-phone"></i> +351 969 222 167 <br>
+              <i class="fa fa-envelope"></i> 
+              <a href="mailto:rafaelsilva1823@gmail.com">rafaelsilva1823@gmail.com</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="col-lg-3">
+          <div class="widget">
+            <h5 class="widgetheading">Links</h5>
+            <ul class="link-list">
+              <li><a href="about.html">Sobre Nós</a></li>
+              <li><a href="pricing.html">Preços</a></li>
+              <li><a href="courses.html">Serviços</a></li>
+              <li><a href="contact.html">Contactos</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Testemunhos -->
+        <div class="col-lg-3">
+          <div class="widget">
+            <h5 class="widgetheading">Testemunhos</h5>
+            <p>"As aulas são práticas e muito dinâmicas!"</p>
+            <p>"Ganhei confiança para falar inglês no trabalho."</p>
+            <p>"Explicações claras, senti evolução rápida."</p>
+          </div>
+        </div>
+
+        <!-- Serviços -->
+        <div class="col-lg-3">
+          <div class="widget">
+            <h5 class="widgetheading">Serviços</h5>
+            <p>Aulas de Inglês</p>
+            <p>Preparação para Exames</p>
+            <p>Inglês para Negócios</p>
+            <p>Aulas de Marketing</p>
+            <p>Aulas de Excel</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="sub-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 text-left">
+            <p>© 2025 Queen Academy. Todos os direitos reservados.</p>
+          </div>
+          <div class="col-lg-6 text-right">
+            <ul class="social-network">
+              <li>
+                <a href="#" target="_blank" rel="noopener" title="Facebook">
+                  <i class="fa fa-facebook"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/jos%C3%A9-silva-190553175/" 
+                   target="_blank" rel="noopener" title="LinkedIn">
+                  <i class="fa fa-linkedin"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- /footer -->
+
+</div><!-- /#wrapper -->
+
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+
+<!-- JS -->
+<script src="js/jquery.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/jquery.fancybox-media.js"></script>
+<script src="js/portfolio/jquery.quicksand.js"></script>
+<script src="js/portfolio/setting.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script src="js/animate.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

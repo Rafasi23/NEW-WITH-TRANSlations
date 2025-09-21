@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>👑Queen Academy</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="" />
+<meta name="author" content="http://webthemez.com" />
+<!-- css -->
+<link href="css/bootstrap.min.css" rel="stylesheet" />
+<link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
+<link href="css/flexslider.css" rel="stylesheet" />
+<link href="css/style.css" rel="stylesheet" />
+ 
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+<script>
+  (function () {
+    // --- user preference helpers ---
+    const setPref = (v) => document.cookie = `qa_prefer=${v}; Max-Age=${60*60*24*7}; Path=/`;
+    const getPref = () => (document.cookie.match(/(?:^|;)\s*qa_prefer=([^;]+)/)||[])[1];
+
+    // --- don’t redirect bots/crawlers (SEO-friendly) ---
+    const ua = navigator.userAgent.toLowerCase();
+    const isBot = /bot|crawl|spider|slurp|facebookexternalhit|crawler/.test(ua);
+    if (isBot) return;
+
+    // --- honor user choice ---
+    if (getPref() === 'desktop') return; // user forced desktop
+    if (location.pathname.endsWith('/mobile.html')) return; // already on mobile
+
+    // --- small screens go to mobile.html ---
+    const isSmall = Math.min(screen.width, screen.height) <= 820 || window.matchMedia('(max-width: 820px)').matches;
+    if (isSmall) {
+      location.replace('/mobile.html');
+    }
+
+    // (Optional) expose a global so a “View Mobile Site” link can set preference:
+    window.QA_setPrefer = setPref;
+  })();
+</script>
+</head>
+<body>
+<div id="wrapper">
+	<!-- start header -->
+	<header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="img/logo.png" alt="logo"/></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Início</a></li> 
+						<li><a href="about.html">Sobre nós</a></li>
+						<li><a href="courses.html">Serviços Extra</a></li>
+                        <li><a href="pricing.html">Preços</a></li>
+                        <li><a href="contact.html">Contactos</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</header>
+	<!-- end header -->
+	<section id="featured">
+	 
+	<!-- Slider -->
+        <div id="main-slider" class="flexslider">
+            <ul class="slides">
+              <li>
+                <img src="img/slides/1.jpg" alt="" />
+                <div class="flex-caption">
+                   <div class="item_introtext"> 
+					<strong>Aulas de Inglês</strong>
+					<p>Melhora as tuas notas</p> </div>
+                </div>
+              </li>
+              <li>
+                <img src="img/slides/2.jpg" alt="" />
+                <div class="flex-caption">
+                     <div class="item_introtext"> 
+					<strong>Serviços de preparação</strong>
+					<p>Fica pronto para fazer qualquer exame de Inglês</p> </div>
+                </div>
+              </li>
+              <li>
+                <img src="img/slides/3.jpg" alt="" />
+                <div class="flex-caption">
+                     <div class="item_introtext"> 
+					<strong>Aulas de Marketing</strong>
+					<p>Melhora o teu conhecimento para o teu negócio beneficiar</p> </div>
+                </div>
+              </li>
+            </ul>
+        </div>
+	<!-- end slider -->
+ 
+	</section>
+	<section class="callaction">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="aligncenter"><h1 class="aligncenter">As Nossos Serviços</h1><span class="clear spacer_responsive_hide_mobile " style="height:13px;display:block;"></span>Fortalecemos o teu conhecimento e damos-te as ferramentas certas para evoluires pessoalmente ou no teu negócio.</div>
+			</div>
+		</div>
+	</div>
+	</section>
+	<section id="content">
+	
+	
+	<div class="container">
+			<div class="row">
+		<div class="skill-home"> <div class="skill-home-solid clearfix"> 
+		<div class="col-md-3 text-center">
+		<span class="icons c1"><i class="fa fa-book"></i></span> <div class="box-area">
+		<h3>Aulas de Inglês</h3> <p>Aprende inglês de forma prática e eficaz. Aulas personalizadas para todos os níveis, focadas em conversação, gramática e vocabulário.</p></div>
+		</div>
+		<div class="col-md-3 text-center"> 
+		<span class="icons c2"><i class="fa fa-pencil"></i></span> <div class="box-area">
+		<h3>Preparação para Exames</h3> <p>Preparação intensiva para exames internacionais de inglês, incluindo IELTS, TOEFL e Cambridge. Estratégias, técnicas e simulações para garantires o melhor resultado.</p></div>
+		</div>
+		<div class="col-md-3 text-center"> 
+		<span class="icons c3"><i class="fa fa-briefcase"></i></span> <div class="box-area">
+		<h3>Inglês para Negócios</h3> <p>Desenvolve as tuas competências linguísticas no contexto profissional. Aprende vocabulário, expressões e técnicas de comunicação para reuniões, entrevistas e apresentações em inglês.</p></div>
+		</div>
+		<div class="col-md-3 text-center"> 
+		<span class="icons c4"><i class="fa fa-desktop"></i></span> <div class="box-area">
+		<h3>Aulas de Marketing</h3> <p>Domina os principais conceitos e estratégias de marketing. Desde fundamentos teóricos até aplicações práticas, aprende a desenvolver análises e planos adaptados ao mundo real.</p>
+		</div></div>
+		</div></div>
+		</div> 
+</div>
+</section>
+<footer>
+  <div class="container">
+    <div class="row">
+
+      <!-- Contacto -->
+      <div class="col-lg-3">
+        <div class="widget">
+          <h5 class="widgetheading">O Nosso Contacto</h5>
+          <address>
+            <strong>Queen Academy</strong><br>
+            Avenida da Liberdade, Paço de Sousa<br>
+            4560-380 Penafiel Porto
+          </address>
+          <p>
+            <i class="fa fa-phone"></i> +351 969 222 167 <br>
+            <i class="fa fa-envelope"></i> 
+            <a href="mailto:rafaelsilva1823@gmail.com">rafaelsilva1823@gmail.com</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="col-lg-3">
+        <div class="widget">
+          <h5 class="widgetheading">Links</h5>
+          <ul class="link-list">
+            <li><a href="about.html">Sobre Nós</a></li>
+            <li><a href="pricing.html">Preços</a></li>
+            <li><a href="courses.html">Serviços</a></li>
+            <li><a href="contact.html">Contactos</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Testemunhos -->
+      <div class="col-lg-3">
+        <div class="widget">
+          <h5 class="widgetheading">Testemunhos</h5>
+          <p>"As aulas são práticas e muito dinâmicas!"</p>
+          <p>"Ganhei confiança para falar inglês no trabalho."</p>
+          <p>"Explicações claras, senti evolução rápida."</p>
+        </div>
+      </div>
+
+      <!-- Serviços -->
+      <div class="col-lg-3">
+        <div class="widget">
+          <h5 class="widgetheading">Serviços</h5>
+          <p>Aulas de Inglês</p>
+          <p>Preparação para Exames</p>
+          <p>Inglês para Negócios</p>
+          <p>Aulas de Marketing</p>
+          <p>Aulas de Excel</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="sub-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 text-left">
+          <p>© 2025 Queen Academy. Todos os direitos reservados.</p>
+        </div>
+        <div class="col-lg-6 text-right">
+          <ul class="social-network">
+            <li>
+              <a href="#" target="_blank" rel="noopener" title="Facebook">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/jos%C3%A9-silva-190553175/" 
+                 target="_blank" rel="noopener" title="LinkedIn">
+                <i class="fa fa-linkedin"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</p>
+<script>
+  (function () {
+    document.getElementById('prefer-mobile')?.addEventListener('click', function () {
+      document.cookie = `qa_prefer=mobile; Max-Age=${60*60*24*7}; Path=/`;
+    });
+  })();
+</script>
+</footer>
+</div>
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+<!-- javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="js/jquery.js"></script>
+<script src="js/jquery.easing.1.3.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/jquery.fancybox-media.js"></script> 
+<script src="js/portfolio/jquery.quicksand.js"></script>
+<script src="js/portfolio/setting.js"></script>
+<script src="js/jquery.flexslider.js"></script>
+<script src="js/animate.js"></script>
+<script src="js/custom.js"></script>
+</body>
+</html>

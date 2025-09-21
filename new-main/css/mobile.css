@@ -1,0 +1,504 @@
+/* ===== Hero Section (mobile) ===== */
+/* Fonts to match desktop */
+html, body { font-family: 'Open Sans', Arial, sans-serif; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Open Sans', Arial, sans-serif; }
+/* If you ever use quotes: */
+blockquote, .quote { font-family: 'Noto Serif', serif; }
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  padding: 24px 16px;
+}
+
+.hero-img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.1);
+}
+
+.hero-text h1 {
+  font-size: 1.8rem;
+  margin: 0.4em 0;
+}
+
+.hero-text p {
+  font-size: 1rem;
+  color: #475467;
+  margin-bottom: 1em;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  border-radius: 12px;
+  padding: 12px 18px;
+  font-weight: 600;
+  text-decoration: none;
+  min-height: 44px;
+}
+
+.btn-primary {
+  background: #5b6bff; /* your brand color */
+  color: #fff;
+}
+
+.btn-ghost {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  color: #101828;
+}
+/* ===== Section framing ===== */
+.section-title {
+  font-size: 1.4rem;
+  margin: 8px 0 4px;
+  text-align: center;
+}
+.section-sub {
+  color: #475467;
+  text-align: center;
+  margin: 0 16px 14px;
+  font-size: 0.98rem;
+}
+
+/* ===== Services grid (mobile-first) ===== */
+.services {
+  padding: 12px 16px 24px;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;   /* 1 column on phones */
+  gap: 14px;
+}
+@media (min-width: 640px) {
+  .services-grid { grid-template-columns: 1fr 1fr; } /* 2 cols on small tablets */
+}
+
+.service-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+}
+.service-img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 10px;
+}
+.service-card h3 {
+  margin: 6px 0 6px;
+  font-size: 1.1rem;
+}
+.service-card p {
+  margin: 0 0 12px;
+  color: #475467;
+  font-size: 0.98rem;
+}
+
+/* Button variant reused from Step 3 */
+.btn-secondary {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  color: #111;
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-weight: 600;
+  text-decoration: none;
+  min-height: 44px;
+  display: inline-block;
+}
+/* Center the desktop preference link */
+#view-desktop {
+  display: inline-block;
+  margin: 20px auto;
+}
+#view-desktop,
+#view-desktop:visited {
+  text-align: center;
+}
+#view-desktop:hover {
+  background: #f2f4f7;
+}
+#view-desktop:active {
+  background: #e5e7eb;
+}
+p:has(#view-desktop) {
+  text-align: center;
+}
+/* Center all text inside the main page content */
+.page {
+  text-align: center;
+}
+/* Center everything inside the service cards */
+.service-card {
+  text-align: center;
+}
+
+/* Optional: center the Marcar button specifically */
+.service-card .btn {
+  display: inline-block;
+  margin: 10px auto 0;
+}
+/* ===== Pricing Section ===== */
+.pricing {
+  padding: 20px 16px 30px;
+  text-align: center;
+}
+.pricing-grid {
+  display: grid;
+  gap: 16px;
+  margin-top: 16px;
+}
+.price-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.06);
+}
+.price-card h3 {
+  margin: 6px 0;
+  font-size: 1.2rem;
+}
+.price-card p {
+  margin: 6px 0 12px;
+  color: #475467;
+}
+.price-card .price {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111;
+}
+.price-card .price span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #475467;
+  margin-left: 2px;
+}
+.price-card .btn {
+  margin-top: 10px;
+}
+
+/* Highlight featured plan */
+.price-card.featured {
+  border: 2px solid #5b6bff;
+  box-shadow: 0 8px 20px rgba(91,107,255,.2);
+}
+.price-card.featured h3 {
+  color: #5b6bff;
+}
+
+/* 2-column layout on wider screens */
+@media (min-width: 640px) {
+  .pricing-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+/* ===== Mobile Header / Nav ===== */
+.m-header {
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 12px 16px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.m-header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #111;
+}
+.m-header nav {
+  margin-top: 8px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.m-header nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: #475467;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+.m-header nav a.active {
+  background: #5b6bff;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ===== Contact Page ===== */
+.contact {
+  padding: 20px 16px 30px;
+  text-align: center;
+}
+.contact-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+.contact-options .btn {
+  width: 100%;
+  border-radius: 12px;
+  padding: 14px;
+  font-size: 1rem;
+}
+.contact-info {
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #475467;
+  line-height: 1.4;
+}
+
+/* ===== General Buttons ===== */
+.btn {
+  display: inline-block;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-weight: 600;
+  text-decoration: none;
+  min-height: 44px;
+}
+.btn-primary {
+  background: #5b6bff;
+  color: #fff;
+  border: none;
+}
+.btn-primary:hover {
+  opacity: 0.9;
+}
+.btn-secondary {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  color: #111;
+}
+/* Centered buttons in Contact page */
+.contact-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* centers horizontally */
+  gap: 12px;
+  margin: 16px 0;
+}
+.contact-options .btn {
+  width: auto;           /* shrink to fit text */
+  min-width: 200px;      /* optional: give them a consistent size */
+  text-align: center;
+}
+/* ===== Contact Form ===== */
+.contact-form {
+  margin-top: 24px;
+  text-align: left;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.05);
+}
+.contact-form h3 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+.form-field {
+  margin-bottom: 14px;
+}
+.form-field label {
+  display: block;
+  font-size: 0.9rem;
+  color: #475467;
+  margin-bottom: 4px;
+}
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: #5b6bff;
+  box-shadow: 0 0 0 2px rgba(91,107,255,.2);
+}
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  box-sizing: border-box;   /* ✅ prevents overflow */
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+:root{
+  --primary:#1E88E5;
+  --primary-dark:#1565C0;
+  --primary-light:#90CAF9;
+  --tint:#E3F2FD;
+  --text-dark:#212121;
+  --text-light:#FFFFFF;
+}
+/* Page background & text */
+body { background: var(--tint); color: var(--text-dark); }
+
+/* Headings / section titles */
+.section-title, h1, h2, h3 { color: var(--primary); }
+
+/* Links */
+a { color: var(--primary); }
+a:hover, a:focus { color: var(--primary-dark); }
+
+/* Buttons */
+.btn-primary { background: var(--primary); color: #fff; border: none; }
+.btn-primary:hover, .btn-primary:focus { background: var(--primary-dark); }
+.btn-ghost, .btn-secondary { border:1px solid #e5e7eb; color: var(--text-dark); background:#fff; }
+
+/* Header nav (mobile) */
+.m-header { background:#fff; border-bottom:1px solid #e5e7eb; }
+.m-header nav a.active { background: var(--primary); color: #fff; }
+
+/* Pricing highlight */
+.price-card.featured { border:2px solid var(--primary); box-shadow: 0 8px 20px rgba(30,136,229,.18); }
+.price-card.featured h3 { color: var(--primary); }
+
+/* Form focus */
+.form-field input:focus, .form-field textarea:focus {
+  border-color: var(--primary); box-shadow: 0 0 0 2px rgba(30,136,229,.2);
+}
+/* Header with background image */
+.m-header {
+  background: url("/img/header-bg.jpg") center/cover no-repeat;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  padding: 16px 16px 12px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  color: var(--text-light); /* ensures text is visible */
+}
+
+.m-header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-light);
+  text-shadow: 0 1px 2px rgba(0,0,0,.4);
+}
+
+.m-header nav {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.m-header nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.15);
+  color: var(--text-light);
+}
+
+.m-header nav a.active {
+  background: var(--primary);
+  color: #fff;
+}
+/* ===== WhatsApp button ===== */
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #25D366;   /* cor oficial WhatsApp */
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  min-width: 200px;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe5b;
+}
+
+.btn-whatsapp .icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+/* ===== Footer (dark solid blue) ===== */
+.m-footer {
+  background: #1565c0;   /* azul escuro sólido */
+  color: #fff;
+  padding: 24px 16px;
+  display: grid;
+  gap: 20px;
+  text-align: center;
+}
+
+.m-footer h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.m-footer p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.m-footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.m-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 700px) {
+  .m-footer {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+  }
+}
+.m-footer {
+  background: #1565c0;   /* azul médio escuro mais suave */
+  color: #fff;
+  padding: 24px 16px;
+  display: grid;
+  gap: 20px;
+  text-align: center;
+}
