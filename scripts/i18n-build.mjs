@@ -158,28 +158,50 @@ function translateString(lang, src, caches, overrides) {
   return c[src] || src;
 }
 
-// Optional post-fix (light touch; overrides should handle most)
+// Fix common MT mistakes on individual strings (text nodes + attributes)
 function postFix(lang, text) {
   if (!text) return text;
+
   if (lang === "en") {
+    // PT days → EN
+    text = text.replace(/Seg[-–]Sex/gi, "Mon–Fri");
+    // Bad MT variants
+    text = text.replace(/Ass[-–]Sex/gi, "Mon–Fri");
+    text = text.replace(/\bSábado\b/gi, "Saturday");
+    // Abbrev for Saturday from PT "Sábado"
+    text = text.replace(/\bS[áa]b\b/gi, "Saturday");
+    // Hour unit
     text = text.replace(/\/\s*Hora\b/gi, "/ hour");
   }
+
   if (lang === "es") {
+    text = text.replace(/Seg[-–]Sex/gi, "Lun–Vie");
+    text = text.replace(/Ass[-–]Sex/gi, "Lun–Vie");
+    text = text.replace(/\bShabbat\b/gi, "Sáb");
+    // keep Sáb as Sáb
     text = text.replace(/\/\s*Hora\b/gi, "/ hora");
   }
+
   return text;
 }
 
-// Optional full-HTML post-processing (helps when words are split across spans)
+// Full-HTML sweep to catch cases split across tags or missed by node-by-node pass
 function postProcessHTML(locale, html) {
   if (locale === "en") {
-    // fix PT split and wrong EN MT
     html = html.replace(/Sobre\s+Mim/gi, "About Me");
     html = html.replace(/About\s+Mim/gi, "About Me");
-    // marketing check-up variants
-    html = html.replace(/Check[-\s]?up\s+de\s+Marketing/gi, "Marketing check-up");
+
+    // Hours line & variants
+    html = html.replace(/Seg[-–]Sex/gi, "Mon–Fri");
+    html = html.replace(/Ass[-–]Sex/gi, "Mon–Fri");
+    html = html.replace(/\bShabbat\b/gi, "Sat");
+    html = html.replace(/\bS[áa]b\b/gi, "Sat");
   } else if (locale === "es") {
     html = html.replace(/Sobre\s+Mim/gi, "Sobre mí");
+    html = html.replace(/Seg[-–]Sex/gi, "Lun–Vie");
+    html = html.replace(/Ass[-–]Sex/gi, "Lun–Vie");
+    html = html.replace(/\bShabbat\b/gi, "Sáb");
+    html = html.replace(/Ass[-–]Sex/gi, "Lun–Vie");
   }
   return html;
 }
