@@ -173,25 +173,12 @@ function postFix(lang, text) {
 // Optional full-HTML post-processing (helps when words are split across spans)
 function postProcessHTML(locale, html) {
   if (locale === "en") {
+    // fix PT split and wrong EN MT
     html = html.replace(/Sobre\s+Mim/gi, "About Me");
     html = html.replace(/About\s+Mim/gi, "About Me");
+    // marketing check-up variants
     html = html.replace(/Check[-\s]?up\s+de\s+Marketing/gi, "Marketing check-up");
-  }
-  if (locale === "es") {
-    html = html.replace(/Sobre\s+Mim/gi, "Sobre mí");
-  }
-  return html;
-}
-  if (locale === "es") {
-    html = html.replace(/Sobre\s+Mim/gi, "Sobre mí");
-  }
-  return html;
-}
-{
-    html = html.replace(/Sobre\s+Mim/gi, "About Me");
-    html = html.replace(/Check[-\s]?up\s+de\s+Marketing/gi, "Marketing check-up");
-  }
-  if (locale === "es") {
+  } else if (locale === "es") {
     html = html.replace(/Sobre\s+Mim/gi, "Sobre mí");
   }
   return html;
